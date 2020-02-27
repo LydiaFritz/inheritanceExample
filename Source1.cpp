@@ -5,14 +5,15 @@
 //using namespace std;
 //
 //class Sequence {
-//private: 
+//private:
 //	double firstTerm;
 //
 //public:
 //	Sequence(double ft) { firstTerm = ft; }
-//	void setFirstTerm(double ft) { firstTerm = ft;}
+//	void setFirstTerm(double ft) { firstTerm = ft; }
 //	double getFirstTerm()const { return firstTerm; }
-//	void displaySequence()const {
+//	//virtual function - enabled overriding
+//	virtual void displaySequence()const {
 //		cout << "The first term of the sequence is " << firstTerm << endl;
 //	}
 //};
@@ -59,17 +60,20 @@
 //};
 //
 //int main() {
-//	
+//
 //	Sequence seq(10);
 //	ArithmeticSequence a_seq(10, -2);
 //	GeometricSequence g_seq(10, .5);
-//	
-//	seq.displaySequence();
-//	cout << endl;
-//	a_seq.displaySequence();
-//	cout << endl;
-//	g_seq.displaySequence();
-//	cout << endl;
+//
+//	//with a virtual function 
+//	Sequence* s = &seq;
+//	s->displaySequence();
+//
+//	s = &a_seq;
+//	s->displaySequence();
+//
+//	s = &g_seq;
+//	s->displaySequence();
 //
 //	return 0;
 //}

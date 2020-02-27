@@ -2,19 +2,19 @@
 ////this is my own work.
 //
 //#include <iostream>
+//#include <vector>
 //using namespace std;
 //
 //class Sequence {
-//private: 
+//private:
 //	double firstTerm;
 //
 //public:
 //	Sequence(double ft) { firstTerm = ft; }
-//	void setFirstTerm(double ft) { firstTerm = ft;}
+//	void setFirstTerm(double ft) { firstTerm = ft; }
 //	double getFirstTerm()const { return firstTerm; }
-//	void displaySequence()const {
-//		cout << "The first term of the sequence is " << firstTerm << endl;
-//	}
+//	//pure virtual function - class is now abstract
+//	virtual void displaySequence()const = 0;
 //};
 //
 //class ArithmeticSequence : public Sequence {
@@ -59,17 +59,33 @@
 //};
 //
 //int main() {
-//	
-//	Sequence seq(10);
+//
+//
 //	ArithmeticSequence a_seq(10, -2);
 //	GeometricSequence g_seq(10, .5);
+//	ArithmeticSequence a_seq1(1.5, -.5);
+//	GeometricSequence g_seq1(100, .1);
+//	ArithmeticSequence a_seq2(0, 100);
+//	GeometricSequence g_seq2(1024, .5);
+//	ArithmeticSequence a_seq3(5, -10);
+//	GeometricSequence g_seq3(1000, .2345);
+//
 //	
-//	seq.displaySequence();
-//	cout << endl;
-//	a_seq.displaySequence();
-//	cout << endl;
-//	g_seq.displaySequence();
-//	cout << endl;
+//	vector<Sequence*> sequences;
+//
+//	sequences.push_back(&a_seq);
+//	sequences.push_back(&g_seq);
+//	sequences.push_back(&a_seq1);
+//	sequences.push_back(&g_seq1);
+//	sequences.push_back(&a_seq2);
+//	sequences.push_back(&g_seq2);
+//	sequences.push_back(&a_seq3);
+//	sequences.push_back(&g_seq3);
+//
+//	for (size_t i = 0; i < sequences.size(); i++)
+//	{
+//		sequences[i]->displaySequence();
+//	}
 //
 //	return 0;
 //}
